@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: Arial;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 94.66%;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  background-color: #0f0f0f;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      order: 1;
+    }
+
+    .burger-menu p {
+      display: flex;
+      width: 36px;
+      height: 6px;
+      border-radius: 4px;
+      background-color: #ffffff;
+      order: -1;
+      margin: 0;
+
+      &:nth-of-type(2) {
+        margin: 4px 0;
+      }
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 497px;
+      height: 100vh;
+      background-color: #7c7c7c;
+      padding: 0;
+      margin: 0;
+      z-index: 5;
+
+      .close-menu {
+        display: flex;
+        position: relative;
+        top: 30px;
+        left: 25px;
+        list-style-type: none;
+        padding: 20px;
+
+        p {
+          width: 36px;
+          height: 6px;
+          border-radius: 4px;
+          background-color: #ffffff;
+          margin: 0;
+        }
+
+        .first-stick {
+          transform: rotate(45deg);
+        }
+
+        .second-stick {
+          position: relative;
+          left: -37px;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &-item {
+        position: relative;
+        top: 85px;
+        list-style-type: none;
+        border: 1px solid #ffffff;
+        border-bottom: none;
+
+        &:nth-of-type(5) {
+          border-bottom: 1px solid #ffffff;
+        }
+
+        &:nth-of-type(-1n+3)::after {
+          content: url("../img/nav__arrow-down.png");
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-left: 1px solid #ffffff;
+          padding: 20px;
+        }
+      }
+
+      &-link {
+        display: block;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 20px 35px;
+
+        &:focus {
+          border-bottom: 1px solid #ffffff;
+        }
+      }
+    }
+
+    .drop-menu {
+      display: none;
+      padding: 0;
+
+      &-item {
+        position: relative;
+        list-style-type: none;
+        border: 1px solid #9c9c9c;
+        background-color: #686868;
+        padding: 20px 66px 20px 20px;
+
+        &:nth-of-type(2) {
+          border: none;
+        }
+      }
+
+      .drop-link {
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+
+    .drop-menu-two {
+      @extend .drop-menu;
+      top: 64px;
+    }
+
+    .open {
+      display: block;
+    }
+
+    .change-arrow {
+      display: block;
+      border: 1px solid white;
+      border-bottom: none;
+
+      &:nth-of-type(-1n+3)::after {
+        content: url("../img/nav__arrow-up.png");
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 1px solid #ffffff;
+        border-top: none;
+        border-right: none;
+      }
+    }
+
+    .call-back {
+      display: flex;
+      color: #ffffff;
+      letter-spacing: 1px;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      text-transform: capitalize;
+      text-decoration: none;
+      order: 1;
+      padding: 11px 30px 10px 35px;
+    }
+  }
+}
+
+.main {
+  .cards-title {
+    text-align: center;
+    font-size: 5.625rem;
+    letter-spacing: 5px;
+  }
+  .cards-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .cards-item {
+      width: 100%;
+      height: 727px;
+      margin-bottom: 30px;
+      background-color: #878787;
+      list-style-type: none;
+
+      &:nth-of-type(5n+1) {
+        background-color: #0f0f0f;
+      }
+
+      &:nth-of-type(5n-2) {
+        background-color: #0f0f0f;
+      }
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 3;
+}
